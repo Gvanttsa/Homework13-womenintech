@@ -61,15 +61,19 @@ for (let item of array) {
 }
 
 //6
-// let array1 = [ [2, -3, 5, 10], [25, -24, -11, 100] , [-6, -7, 10] ]
+let array1 = [ [2, -3, 5, 10], [25, -24, -11, 100] , [-6, -7, 10] ]
 
-// for (let item of array1) {
-//     for (let item of x) {
-//         if ( item > 0) {
-//             console.log(item);
-//         }
-//     }
-// }
+for (let item of array1) {
+
+    for (let x of item) {
+        if (x > 0) {
+            console.log(x);
+        }
+    }
+}
+
+
+
 
 //7
 let array2 = [32, 10, 'hello', null, 'hello2', 50]
@@ -119,12 +123,27 @@ let user3 = {
     isloggedin: true
   }
 
-  function user3 () {
-
+  function printName (obj) {
+      if (obj.isloggedin == true) {
+          return obj.firstname + ' ' + obj.lastname;
+      }
+      return false;
   }
 
+ let result3 = printName (user3);
+ console.log(result3);
 
   //2.4
-  function test1 () {
+  function test1 (maxNumber) {
+      let maxVelue = 0;
+
+      for (let item of maxNumber) {
+          if (item > maxVelue) {
+              maxVelue = item;
+          }
+      }
       
+      return maxVelue;
   }
+
+  console.log(test1 ([10, 74, 102, 230, 17]));
